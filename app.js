@@ -3,7 +3,8 @@ var todoOrderList = document.getElementById('todoList');
 var todoInputText = document.getElementById('todoText');
 var now = new Date()
 var nowTime = now.toLocaleTimeString()
-console.log(nowTime)
+var nowDate = now.toLocaleDateString()
+
 
 todoInputText.addEventListener('keydown', function (e) {
 	if (e.code == "Enter") {
@@ -23,7 +24,8 @@ function add() {
 
 		userData.push({
 			'text': todoInputText.value,
-			'time': nowTime
+			'time': nowTime,
+			'date': nowDate
 		});
 
 		localStorage.setItem('todo', JSON.stringify(userData))
@@ -44,7 +46,7 @@ var dataFromStorage = () => {
 	data.forEach(function (item, index) {
 
 		finalData += `<li>
-		<p>${item.text} <span class="addTime">${item.time}</span></p>
+		<p>${item.text} <span class="addTime">${item.date} <br> ${item.time}</span></p>
 		<button onclick="delt(${index})" class="delBtn">x</button>
 		</li>`
 	

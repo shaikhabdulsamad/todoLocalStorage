@@ -131,7 +131,10 @@ border-radius: 0 0 0 10px;
 	color: grey;
 	margin-top: 15px;
 }
-
+/* .footer{
+	position: fixed;
+	top: 700;
+} */
 
 @media only screen and (max-width: 1024px){
 	.container{
@@ -142,6 +145,9 @@ border-radius: 0 0 0 10px;
 	}
 	#todoList{
 /*		padding: 0 5px 0 10px;*/
+	}
+	.addTime{
+		font-size: 8px;
 	}
 }
 
