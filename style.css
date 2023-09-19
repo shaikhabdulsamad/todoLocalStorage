@@ -101,9 +101,7 @@ font-weight: 700;
 	font-size: 18px;
 	background: transparent;
 	color: black;
-	/*display: flex;
-	align-items: center;
-	justify-content: space-between;*/
+	word-break: break-all;
 }
 
 button{
@@ -117,9 +115,11 @@ border-bottom: 5px solid transparent;
 border-radius: 0 0 0 10px;
 }
 .delBtn{
+	
 	font-size: 16px;
-	margin-left: 2px;
+	/* margin-left: 2px; */
 	border-radius: 0 5px 5px 0;
+	
 }
 /*.savBtn{
 	display: none;

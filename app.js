@@ -14,11 +14,12 @@ todoInputText.addEventListener('keydown', function (e) {
 
 function add() {
 
-	window.location.reload();
+	
 
 	
 
 	if (todoInputText.value != "") {
+		window.location.reload();
 
 		var userData = JSON.parse(localStorage.getItem('todo')) ?? [];
 
@@ -47,7 +48,7 @@ var dataFromStorage = () => {
 
 		finalData += `<li>
 		<p>${item.text} <span class="addTime">${item.date} <br> ${item.time}</span></p>
-		<button onclick="delt(${index})" class="delBtn">x</button>
+		<button onclick="delt(${index})" class="delBtn"><i class="fa-solid fa-trash-can"></i></button>
 		</li>`
 	
 
