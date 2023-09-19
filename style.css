@@ -66,6 +66,7 @@ height: 40px;
 /*	overflow-y : scroll;*/
 	background:white;
 	width: 100%;
+	
 }
 
 #todoList li{
@@ -135,6 +136,14 @@ border-radius: 0 0 0 10px;
 	position: fixed;
 	top: 700;
 } */
+
+.list-placeholder{
+	color: grey;
+	text-align: center;
+	margin-top: 100px;
+	line-height: 40px;
+	
+}
 
 @media only screen and (max-width: 1024px){
 	.container{

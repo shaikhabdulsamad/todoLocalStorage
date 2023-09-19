@@ -43,6 +43,11 @@ var dataFromStorage = () => {
 
 	var data = JSON.parse(localStorage.getItem('todo')) ?? [];
 	finalData = "";
+console.log(data)
+if(data.length == 0){
+	finalData = `<h3 class="list-placeholder">Your to-do list is empty!<br>Get started by adding tasks.<h3>`
+}
+else{
 
 	data.forEach(function (item, index) {
 
@@ -53,6 +58,7 @@ var dataFromStorage = () => {
 	
 
 	})
+}
 
 	
 todoOrderList.innerHTML = finalData;
