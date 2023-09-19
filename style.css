@@ -1,0 +1,147 @@
+:root{
+	--first: rgba(0, 0, 0, .5);
+	--second: rgb(255, 255, 255);
+	--third: rgb(0,0,0);
+}
+
+body{
+	font-family: sans-serif;
+}
+
+.container{
+	width: 50%;
+/*	border: 1px solid black;*/
+	margin: 10px auto;
+	background: var(--first);
+	text-align: center;
+border-radius: 10px;
+
+
+}
+.container h1{
+	margin: 0px;
+	padding:20px 0;
+	font-size: 28px;
+	color: white;
+}
+.input-button{
+	padding:10px 0px;
+	display:flex;
+	justify-content: center;
+	align-items: end;
+
+}
+
+#todoText{
+height: 40px;
+	width: 80%;
+	padding: 10px;
+	border:none;
+	outline:none;
+	border-radius: 5px 0px 0px 5px;
+	font-size: 18px;
+}
+.addBtn{
+	height: 40px;
+	width: 10%;
+	padding:10px;
+	border:none;
+	outline:none;
+	font-weight: 700;
+	background: var(--first);
+	border-radius: 0px 5px 5px 0px;
+	color: white;
+
+}
+.addBtn:hover{
+	background-color: var(--third);
+}
+
+#todoList{
+	text-align:left;
+	margin: 0;
+	padding: 10px 0;
+/*	padding: 0 10px 0 30px;*/
+/*	height: 100%;*/
+/*	overflow-y : scroll;*/
+	background:white;
+	width: 100%;
+}
+
+#todoList li{
+	margin: 10px 0;
+	font-size:18px;
+	display: flex;
+/*	border: 1px solid black;*/
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#todoList li button{
+	flex:1;
+	border: none;
+	outline: none;
+	background: var(--first);
+	color: white;
+font-weight: 700;
+/*text-align: center;*/
+}
+
+#todoList li button:hover{
+	background: var(--third);
+}
+
+#todoList li p{
+	margin: 0;
+	flex:12;
+	padding:10px;
+	border:none;
+	outline:none;
+	margin-right: 5px;
+	font-size: 18px;
+	background: transparent;
+	color: black;
+	/*display: flex;
+	align-items: center;
+	justify-content: space-between;*/
+}
+
+button{
+	cursor: pointer;
+}
+
+/* list styling */
+
+.listInput{
+border-bottom: 5px solid transparent;
+border-radius: 0 0 0 10px;
+}
+.delBtn{
+	font-size: 16px;
+	margin-left: 2px;
+	border-radius: 0 5px 5px 0;
+}
+/*.savBtn{
+	display: none;
+}*/
+
+.addTime{
+	float: right;
+	font-size: 10px;
+	color: grey;
+	margin-top: 15px;
+}
+
+
+@media only screen and (max-width: 1024px){
+	.container{
+		width: 100%;
+	}
+	.addBtn{
+		width: 15%;
+	}
+	#todoList{
+/*		padding: 0 5px 0 10px;*/
+	}
+}
+
