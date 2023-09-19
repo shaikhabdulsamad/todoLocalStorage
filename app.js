@@ -3,6 +3,7 @@ var todoOrderList = document.getElementById('todoList');
 var todoInputText = document.getElementById('todoText');
 var now = new Date()
 var nowTime = now.toLocaleTimeString()
+console.log(nowTime)
 
 todoInputText.addEventListener('keydown', function (e) {
 	if (e.code == "Enter") {
@@ -11,6 +12,10 @@ todoInputText.addEventListener('keydown', function (e) {
 })
 
 function add() {
+
+	window.location.reload();
+
+	
 
 	if (todoInputText.value != "") {
 
@@ -26,7 +31,10 @@ function add() {
 	dataFromStorage();
 	todoInputText.value = "";
 
+
 }
+
+
 
 var dataFromStorage = () => {
 
