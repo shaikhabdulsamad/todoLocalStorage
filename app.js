@@ -5,7 +5,6 @@ var now = new Date()
 var nowTime = now.toLocaleTimeString()
 var nowDate = now.toLocaleDateString()
 
-
 todoInputText.addEventListener('keydown', function (e) {
 	if (e.code == "Enter") {
 		add()
@@ -14,12 +13,7 @@ todoInputText.addEventListener('keydown', function (e) {
 
 function add() {
 
-	
-
-	
-
 	if (todoInputText.value != "") {
-		window.location.reload();
 
 		var userData = JSON.parse(localStorage.getItem('todo')) ?? [];
 
@@ -28,7 +22,7 @@ function add() {
 			'time': nowTime,
 			'date': nowDate
 		});
-
+		window.location.reload();
 		localStorage.setItem('todo', JSON.stringify(userData))
 	}
 	dataFromStorage();
@@ -45,7 +39,10 @@ var dataFromStorage = () => {
 	finalData = "";
 console.log(data)
 if(data.length == 0){
-	finalData = `<h3 class="list-placeholder">Your to-do list is empty!<br>Get started by adding tasks.<h3>`
+	finalData = `<h3 class="list-placeholder">Your to-do list is empty!<br>Get started by adding tasks.<h3>
+	<p class="about-developer">Developed by A.S.WebDev.</p>
+
+	`
 }
 else{
 

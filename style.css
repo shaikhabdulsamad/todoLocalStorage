@@ -2,19 +2,22 @@
 	--first: rgba(0, 0, 0, .5);
 	--second: rgb(255, 255, 255);
 	--third: rgb(0,0,0);
+	--placeholder: rgb(168, 173, 180);
 }
 
 body{
 	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .container{
 	width: 50%;
-/*	border: 1px solid black;*/
-	margin: 10px auto;
+	margin: 0 auto;
 	background: var(--first);
 	text-align: center;
-border-radius: 10px;
+	border-radius: 10px;
 
 
 }
@@ -61,19 +64,18 @@ height: 40px;
 	text-align:left;
 	margin: 0;
 	padding: 10px 0;
-/*	padding: 0 10px 0 30px;*/
-/*	height: 100%;*/
-/*	overflow-y : scroll;*/
 	background:white;
 	width: 100%;
 	
+}
+#todoText::placeholder{
+	color: var(--placeholder);
 }
 
 #todoList li{
 	margin: 10px 0;
 	font-size:18px;
 	display: flex;
-/*	border: 1px solid black;*/
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -85,7 +87,6 @@ height: 40px;
 	background: var(--first);
 	color: white;
 font-weight: 700;
-/*text-align: center;*/
 }
 
 #todoList li button:hover{
@@ -109,22 +110,14 @@ button{
 	cursor: pointer;
 }
 
-/* list styling */
 
-.listInput{
-border-bottom: 5px solid transparent;
-border-radius: 0 0 0 10px;
-}
 .delBtn{
 	
 	font-size: 16px;
-	/* margin-left: 2px; */
 	border-radius: 0 5px 5px 0;
 	
 }
-/*.savBtn{
-	display: none;
-}*/
+
 
 .addTime{
 	float: right;
@@ -132,31 +125,37 @@ border-radius: 0 0 0 10px;
 	color: grey;
 	margin-top: 15px;
 }
-/* .footer{
-	position: fixed;
-	top: 700;
-} */
+
 
 .list-placeholder{
-	color: grey;
+	color: var(--placeholder);
 	text-align: center;
 	margin-top: 100px;
 	line-height: 40px;
-	
+	font-weight: 500;
+}
+.about-developer{
+	color: var(--placeholder);
+	text-align: center;
+	margin-top: 300px;
+	font-size: 12px;
+	font-weight: 500;
 }
 
 @media only screen and (max-width: 1024px){
 	.container{
 		width: 100%;
+		border-radius: 0px;
 	}
 	.addBtn{
 		width: 15%;
 	}
-	#todoList{
-/*		padding: 0 5px 0 10px;*/
-	}
+
 	.addTime{
 		font-size: 8px;
+	}
+	#todoList li{
+		margin: 10px 5px;
 	}
 }
 
