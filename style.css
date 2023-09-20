@@ -1,7 +1,7 @@
 :root{
-	--first: rgba(0, 0, 0, .5);
-	--second: rgb(255, 255, 255);
-	--third: rgb(0,0,0);
+	--first: #CC313D;
+	--second: #fa6b7e;
+	--third: rgb(159, 33, 33);
 	--placeholder: rgb(168, 173, 180);
 }
 
@@ -51,7 +51,7 @@ height: 40px;
 	border:none;
 	outline:none;
 	font-weight: 700;
-	background: var(--first);
+	background: var(--second);
 	border-radius: 0px 5px 5px 0px;
 	color: white;
 
@@ -84,7 +84,7 @@ height: 40px;
 	flex:1;
 	border: none;
 	outline: none;
-	background: var(--first);
+	background: var(--second);
 	color: white;
 font-weight: 700;
 }
