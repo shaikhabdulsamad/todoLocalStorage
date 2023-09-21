@@ -50,7 +50,6 @@ else{
 
 		finalData += `<li>
 		<input type="text" class="listInput" value="${item.text}" disabled>
-		<span class="addTime">${item.date}<br> ${item.time}</span>
 		<button onclick="edit(${index},this)" class="editBtn"><i class="fa-regular fa-pen-to-square"></i></button>
 		<button onclick="save(${index},this)" class="saveBtn"><i class="fa-regular fa-share-from-square"></i></button>
 		<button onclick="delt(${index})" class="delBtn"><i class="fa-regular fa-trash-can"></i></button>
