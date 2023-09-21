@@ -93,7 +93,7 @@ font-weight: 700;
 	background: var(--third);
 }
 
-#todoList li p{
+#todoList li input{
 	margin: 0;
 	flex:12;
 	padding:10px;
@@ -104,6 +104,10 @@ font-weight: 700;
 	background: transparent;
 	color: black;
 	word-break: break-all;
+	word-wrap: break-word;
+}
+.listInput{
+border-bottom: 2px solid transparent;
 }
 
 button{
@@ -112,20 +116,26 @@ button{
 
 
 .delBtn{
-	
+	/* flex: 1; */
 	font-size: 16px;
 	border-radius: 0 5px 5px 0;
-	
+	margin-left: 1px;
 }
-
-
+/* .editBtn
+{
+	flex: 1;
+} */
 .addTime{
 	float: right;
 	font-size: 10px;
 	color: grey;
-	margin-top: 15px;
+	margin-top: 30px;
+	margin-right: 5px;
+	margin-bottom: 2px;
 }
-
+.saveBtn{
+	display: none;
+}
 
 .list-placeholder{
 	color: var(--placeholder);

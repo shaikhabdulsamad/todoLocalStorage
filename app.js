@@ -49,8 +49,10 @@ else{
 	data.forEach(function (item, index) {
 
 		finalData += `<li>
-		<p>${item.text} <span class="addTime">${item.date} <br> ${item.time}</span></p>
-		<button onclick="delt(${index})" class="delBtn"><i class="fa-solid fa-trash-can"></i></button>
+		<input type="text" class="listInput" value="${item.text}" disabled><span class="addTime">${item.date}<br> ${item.time}</span></p>
+		<button onclick="edit(${index},this)" class="editBtn"><i class="fa-regular fa-pen-to-square"></i></button>
+		<button onclick="save(${index},this)" class="saveBtn"><i class="fa-regular fa-share-from-square"></i></button>
+		<button onclick="delt(${index})" class="delBtn"><i class="fa-regular fa-trash-can"></i></button>
 		</li>`
 	
 
@@ -76,3 +78,27 @@ function delt(i) {
 	dataFromStorage();
 }
 
+function edit(i,e){
+e.style.display = 'none'
+var saveBtn = document.getElementsByClassName('saveBtn')
+saveBtn[i].style.display = 'block'
+var listInput = document.getElementsByClassName('listInput')
+listInput[i].removeAttribute('disabled')
+listInput[i].style.borderBottom = '2px solid red'
+listInput[i].style.borderRadius = '0 0 0 5px'
+}
+
+function save(i,e){
+	e.style.display = 'none'
+	var editBtn = document.getElementsByClassName('editBtn')
+	editBtn[i].style.display = 'block'
+	
+	
+
+	var userData = JSON.parse(localStorage.getItem('todo')) ?? [];
+	var listInput = document.getElementsByClassName('listInput')
+	userData[i].text = listInput[i].value
+
+	localStorage.setItem('todo', JSON.stringify(userData))
+	dataFromStorage();
+}
