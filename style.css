@@ -95,7 +95,7 @@ font-weight: 700;
 
 #todoList li input{
 	margin: 0;
-	flex:12;
+	flex:10;
 	padding:10px;
 	border:none;
 	outline:none;
@@ -126,10 +126,11 @@ button{
 	flex: 1;
 } */
 .addTime{
+	
 	float: right;
-	font-size: 10px;
+	font-size: 8px;
 	color: grey;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-right: 5px;
 	margin-bottom: 2px;
 }
