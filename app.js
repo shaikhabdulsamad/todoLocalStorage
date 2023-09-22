@@ -1,9 +1,11 @@
 
 var todoOrderList = document.getElementById('todoList');
 var todoInputText = document.getElementById('todoText');
-var now = new Date()
-var nowTime = now.toLocaleTimeString()
-var nowDate = now.toLocaleDateString()
+var todoInputTime = document.getElementById('todoTime');
+
+// var now = new Date()
+// var nowTime = now.toLocaleTimeString()
+// var nowDate = now.toLocaleDateString()
 
 todoInputText.addEventListener('keydown', function (e) {
 	if (e.code == "Enter") {
@@ -18,17 +20,16 @@ function add() {
 		var userData = JSON.parse(localStorage.getItem('todo')) ?? [];
 
 		userData.push({
-			'text': todoInputText.value,
-			'time': nowTime,
-			'date': nowDate
+			'text': (todoInputTime.value == '')? `${todoInputText.value}` : `${todoInputTime.value} ${todoInputText.value}`
+			
 		});
-		window.location.reload();
+		console.log(todoInputTime.value)
+		// window.location.reload();
 		localStorage.setItem('todo', JSON.stringify(userData))
 	}
 	dataFromStorage();
 	todoInputText.value = "";
-
-
+	// todoInputTime.value = "12:00am";
 }
 
 
@@ -37,12 +38,10 @@ var dataFromStorage = () => {
 
 	var data = JSON.parse(localStorage.getItem('todo')) ?? [];
 	finalData = "";
-console.log(data)
+
 if(data.length == 0){
 	finalData = `<h3 class="list-placeholder">Your to-do list is empty!<br>Get started by adding tasks.<h3>
-	<p class="about-developer">Developed by A.S.WebDev.</p>
-
-	`
+	<p class="about-developer">Developed by A.S.WebDev.</p>`
 }
 else{
 
@@ -54,19 +53,13 @@ else{
 		<button onclick="save(${index},this)" class="saveBtn"><i class="fa-regular fa-share-from-square"></i></button>
 		<button onclick="delt(${index})" class="delBtn"><i class="fa-regular fa-trash-can"></i></button>
 		</li>`
-	
-
 	})
 }
 
-	
-todoOrderList.innerHTML = finalData;
+	todoOrderList.innerHTML = finalData;
 }
 
-
 dataFromStorage();
-
-
 
 
 function delt(i) {
@@ -92,8 +85,6 @@ function save(i,e){
 	e.style.display = 'none'
 	var editBtn = document.getElementsByClassName('editBtn')
 	editBtn[i].style.display = 'block'
-	
-	
 
 	var userData = JSON.parse(localStorage.getItem('todo')) ?? [];
 	var listInput = document.getElementsByClassName('listInput')
